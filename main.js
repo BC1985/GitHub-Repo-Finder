@@ -16,10 +16,22 @@ function getUrl() {
 }
 function getUserRepos(url) {
     fetch(url)
-        .then(response => response.json())
-        .then(responseJson =>displayResults(responseJson));
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        })
+        .then(responseJson =>displayResults(responseJson))
+        .catch (err => {
+        $('#error-message').text(`Oops... ${err.message}`);
 
+            $('input[type=text]').val("")
+
+    });
 }
+
+
 
 function displayResults(responseJson){
     // iterate through the articles array, stopping at the max number of .repos
@@ -28,16 +40,35 @@ function displayResults(responseJson){
     for (let i = 0; i < data.length ; i++) {
 
         $('.repos').append(
-            `<ul>
-            <li><h3><a href=${data[i].html_url}>${data[i].name}</h3></a></li>
-            </ul>
-            `
+            `<li><h3><a href=${data[i].html_url}>${data[i].name}</h3></a></li>`
         )
+        clearContainer();
+        //clears input field
+        $('input[type=text]').val("")
+
     };
-    //display the .repos section  
-   // $('#.repos').removeClass('hidden');
+
 }
 
+$(function () {
+    //ensures user can't click submit until input field is is cliked
+
+    $('input[type=text]').keyup(function () {
+        if ($(this).val() == '') {
+            $('.enableOnInput').prop('disabled', true);
+        } else {
+            $('.enableOnInput').prop('disabled', false);
+        }
+    });
+});
+
+function clearContainer() {
+    //clears image container for a new batch of pics
+    $('form').submit(function (event) {
+        $('.repos').empty();
+    });
+
+}
 
 function renderPage() {
     getUser();
