@@ -26,10 +26,11 @@ input{
 }
 
 button {
-background-color: rgb(39, 38, 38);
+background-color: rgb(56, 54, 54);
 color:white;
 border-radius: 4px;
 height: 25px;
+margin-left: 10px;
 }
 a:link {
     color:gray;
@@ -49,6 +50,9 @@ main{
     flex-direction: column;
 
 }
+p   {
+    margin-top: 0px;
+}
  .repos {
 
     font-family: 'Open Sans', sans-serif;
@@ -60,4 +64,58 @@ main{
     color:red;
     font-family: 'Open Sans', sans-serif;
 
+}
+/* IPAD DISPLAY */
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) {
+body    {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+h2  {
+    font-size: 2em;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+
+
+/* DONT TOUCH */
+}
+/* DESKTOP DISPLAY */
+@media only screen  and (min-width : 1224px) {
+
+header  {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.repos{
+    text-align: center;
+    width:100%;
+
+ 
+}
+
+
+.user-name{
+        display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#error-message{
+    color:red;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+
+}
+
+/* DONT TOUCH */
 }
