@@ -1,121 +1,231 @@
-body  {
-box-sizing: border-box;
-background-image: url('https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/02/github1.png');
-/* background-size: cover; */
-padding:60px;
-font-family: 'Oswald', sans-serif;
-background-position-x: 58vw;
-background-position-y: 30vh;
-background-size:90%;
-background-repeat: no-repeat;
-
+/* General settings */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  background-image: url("https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/02/github1.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50vw 40vh;
+  background-size: 100%;
+}
+.wrapper {
+  padding: 10%;
 }
 
-ul{
-    margin-top:30px;
-    text-align: left;
+#form {
+  display: flex;
 }
-li {
-list-style-type: none;
+#form input {
+  background-color: lightgray;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1em;
 }
-
-input{
-    border:1px solid gray;
-    background-color: lightgray;
-    height: 20px;
+#submit-button {
+  background-color: rgb(56, 54, 54);
+  color: white;
+  border-radius: 5px;
+  border: none;
 }
-
-button {
-background-color: rgb(56, 54, 54);
-color:white;
-border-radius: 4px;
-height: 25px;
-margin-left: 10px;
+#user-info {
+  margin-top: 5%;
+  font-family: "Quattrocento Sans", sans-serif;
+}
+.repos {
+  list-style-type: none;
+  font-family: "Quattrocento Sans", sans-serif;
 }
 a:link {
-    color:gray;
-
+  color: gray;
+  text-decoration: none;
 }
 
-a:link:hover{
-
-    color:rgb(55, 55, 99)
-}
-a:visited{
-
-    color:gray;
-}
-main{
-    display:flex;
-    flex-direction: column;
-
-}
-p   {
-    margin-top: 0px;
-}
- .repos {
-
-    font-family: 'Open Sans', sans-serif;
-    margin-top:50px;
-    width:50%;
-
-}
-#error-message{
-    color:red;
-    font-family: 'Open Sans', sans-serif;
-
-}
-/* IPAD DISPLAY */
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) {
-body    {
-    margin-left: 10%;
-    margin-right: 10%;
+a:visited {
+  color: gray;
 }
 
-h2  {
-    font-size: 2em;
-}
-
-p {
-    font-size: 20px;
-}
-
-
-
-
-/* DONT TOUCH */
-}
-/* DESKTOP DISPLAY */
-@media only screen  and (min-width : 1224px) {
-
-header  {
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .wrapper {
+    padding: 10%;
     display: flex;
     flex-direction: column;
-    text-align: center;
+  }
+
+  p {
+    margin-top: 0px;
+  }
+
+  .repos a {
+    color: gray;
+    text-decoration: none;
+  }
+  #form {
+    display: flex;
+  }
+  #submit-button {
+    padding: 8px 25px;
+    margin-left: 10px;
+  }
+  #error-message {
+    color: red;
+    font-family: "Open Sans", sans-serif;
+  }
 }
 
-
-.repos{
-    text-align: center;
-    width:100%;
-
- 
-}
-
-
-.user-name{
-        display: flex;
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .wrapper {
+    padding: 10%;
+    display: flex;
     flex-direction: column;
-    text-align: center;
+  }
+  #submit-button {
+    padding: 8px 25px;
+    margin-left: 10px;
+  }
 }
 
-#error-message{
-    color:red;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center;
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  body {
+    background-position: 50vw 50vh;
+  }
+  .wrapper {
+    padding: 10%;
+  }
+  .interface {
+    font-size: 1.1em;
+  }
+  .repos {
+    margin: 0 15% 5% 0;
+  }
+
+  #submit-button {
+    font-size: 1em;
+    padding: 8px 25px;
+    margin-left: 10px;
+  }
 }
 
-/* DONT TOUCH */
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  body {
+    background-position: 50vw 5vh;
+  }
+  .wrapper {
+    padding: 10%;
+  }
+  #submit-button {
+    padding: 8px 25px;
+    margin-left: 10px;
+  }
+}
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  body {
+    background-position: 50vw 50%;
+  }
+  .wrapper {
+    padding: 5% 10%;
+  }
+  #submit-button {
+    padding: 8px 25px;
+    margin-left: 10px;
+  }
+}
+
+/* ----------- iPhone X ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+  .wrapper {
+    padding: 10%;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  body {
+    background-position: 50vw 50%;
+  }
+
+  .wrapper {
+    padding: 5% 10%;
+  }
+  #submit-button {
+    padding: 8px 25px;
+    margin-left: 10px;
+  }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1224px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    background-position: 50vw;
+  }
+  .wrapper {
+    padding: 10% 15%;
+  }
+
+  #submit-button {
+    font-size: 1.1em;
+    padding: 10px 30px;
+    margin-left: 15px;
+  }
+  .repos {
+    margin: 10% 15% 5% 0;
+    font-size: 1.2em;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1224px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    background-position: 50vw;
+  }
+  .wrapper {
+    padding: 5% 10%;
+  }
+  #submit-button {
+    font-size: 1.1em;
+    padding: 10px 30px;
+    margin-left: 15px;
+  }
+}
+/* DESKTOP DISPLAY */
+@media only screen and (min-width: 1224px) {
+  body {
+    background-position: center;
+    background-size: 60%;
+  }
+  .wrapper {
+    padding: 10%;
+  }
+
+  .repos {
+    font-size: 1.2em;
+  }
+
+  #submit-button {
+    font-size: 1em;
+    padding: 10px 20px;
+    margin-left: 15px;
+  }
+
+  #error-message {
+    color: red;
+    font-family: "Open Sans", sans-serif;
+  }
 }
