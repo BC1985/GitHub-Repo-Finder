@@ -7,8 +7,9 @@ body {
   font-family: "Oswald", sans-serif;
   background-image: url("https://s3-ap-south-1.amazonaws.com/av-blog-media/wp-content/uploads/2018/02/github1.png");
   background-repeat: no-repeat;
-  background-position: 50vw 40vh;
+  background-position: 50vw 65vh;
   background-size: 100%;
+  background-attachment: fixed;
 }
 .wrapper {
   padding: 10%;
@@ -26,7 +27,9 @@ body {
 #submit-button {
   background-color: rgb(56, 54, 54);
   color: white;
+  padding: 10px 20px;
   border-radius: 5px;
+  margin-left: 10px;
   border: none;
 }
 #user-info {
@@ -172,7 +175,7 @@ a:visited {
 /* Portrait */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1224px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   body {
-    background-position: 50vw;
+    background-position: 50vw 30vh;
   }
   .wrapper {
     padding: 10% 15%;
@@ -192,7 +195,7 @@ a:visited {
 /* Landscape */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1224px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
   body {
-    background-position: 50vw;
+    background-position: 50vw 10vh;
   }
   .wrapper {
     padding: 5% 10%;
